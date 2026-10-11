@@ -6,7 +6,7 @@ package com.techlab.util;
 * para usarlos. Se invocan directamente.
 * */
 
-import com.techlab.excepciones.StockInsuficienteException;
+import com.techlab.productos.Producto;
 
 public class Validador {
     /*
@@ -32,11 +32,19 @@ public class Validador {
         }
     }
 
-    public static void validarStock(int stock) {
+    public static void validarCantidadStock(int stock) {
         // Un stock negativo no representa a un producto valido.
         if (stock < 0) {
             throw new IllegalArgumentException(
                     "El stock no puede ser negativo."
+            );
+        }
+    }
+
+    public static void validarProducto(Producto producto) {
+        if (producto == null) {
+            throw new IllegalArgumentException(
+                    "El producto no puede ser nulo."
             );
         }
     }
