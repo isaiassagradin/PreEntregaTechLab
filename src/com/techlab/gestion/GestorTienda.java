@@ -19,7 +19,7 @@ public class GestorTienda {
     }
 
     public void agregarProducto(Producto producto) {
-        Validador.validarProducto(producto);
+        Validador.validarObjeto(producto, "El Producto");
         catalogo.add(producto);
     }
 

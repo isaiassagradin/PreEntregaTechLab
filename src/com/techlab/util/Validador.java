@@ -32,6 +32,14 @@ public class Validador {
         }
     }
 
+    public static void validarCantidad(int cantidad) {
+        if (cantidad < 1) {
+            throw new IllegalArgumentException(
+                    "La cantidad ingresada debe ser mayor a 0."
+            );
+        }
+    }
+
     public static void validarCantidadStock(int stock) {
         // Un stock negativo no representa a un producto valido.
         if (stock < 0) {
@@ -41,10 +49,10 @@ public class Validador {
         }
     }
 
-    public static void validarProducto(Producto producto) {
-        if (producto == null) {
+    public static void validarObjeto(Object objeto, String nombreObjeto) {
+        if (objeto == null) {
             throw new IllegalArgumentException(
-                    "El producto no puede ser nulo."
+                    nombreObjeto.trim() + " no puede ser nulo."
             );
         }
     }
